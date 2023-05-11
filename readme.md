@@ -1,16 +1,17 @@
 # Receipt Generator
 
-This is a simple web application that generates rent receipts. The app is built with React.js and leverages the react-router for routing, react-to-print for generating PDFs, and Bootstrap for styling.
+This is a simple web application that generates rent and wifi receipts. The app is built with React.js and leverages the react-router for routing, react-to-print for generating PDFs, and Bootstrap for styling.
 
 ## Features
 
-- Form to input rent details
+- Sample rent and wifi receipts download
+- Form to input rent and wifi details
 - Preview of the receipt before generation
 - PDF generation of the receipt
 
 ## Live Demo
 
-https://receipts-generator.vercel.app/
+https://receipts-generator-niteshpk.vercel.app/
 
 ### Prerequisites
 
@@ -49,12 +50,6 @@ To get started with this project, follow these steps:
    ```
    http://localhost:5173/
    ```
-
-## Usage
-
-1. Fill in the rent details in the form.
-2. Click on "Submit" to preview the receipt.
-3. If satisfied with the preview, click on "Print/Export to PDF" to generate a PDF of the receipt.
 
 ## Built With
 

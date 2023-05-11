@@ -1,23 +1,23 @@
 import { useState, useRef, useEffect } from "react";
-import RentReceiptForm from "./RentReceiptForm";
-import RentReceiptToPrint from "./RentReceiptToPrint";
+import WifiReceiptForm from "../wifi-receipt/WifiReceiptForm";
+import WifiReceiptToPrint from "./WifiReceiptToPrint";
 import ReactToPrint from "react-to-print";
 import { Link } from "react-router-dom";
 
 const initialObj = {
   receiptNo: "",
-  receiptDate: "",
-  rentAmount: "",
-  tenantName: "",
-  fullAddress: "",
-  fromDate: "",
-  toDate: "",
-  landlordName: "",
-  landlordPAN: "",
-  showStamp: false,
+  transactionDate: "",
+  amount: "",
+  transactionId: "",
+  accountNo: "",
+  bankReferenceNo: "",
+  invoiceNo: "",
+  serviceProvider: "",
+  tagLine: "",
+  note: "",
 };
 
-const RentReceiptContainer = () => {
+const WifiReceiptContainer = () => {
   const [submitted, setSubmitted] = useState(false);
   const [receiptData, setReceiptData] = useState(initialObj);
   const [disableSubmit, setDisableSubmit] = useState(true);
@@ -31,26 +31,28 @@ const RentReceiptContainer = () => {
   useEffect(() => {
     const {
       receiptNo,
-      receiptDate,
-      rentAmount,
-      tenantName,
-      fullAddress,
-      fromDate,
-      toDate,
-      landlordName,
-      landlordPAN,
+      transactionDate,
+      amount,
+      transactionId,
+      accountNo,
+      bankReferenceNo,
+      invoiceNo,
+      serviceProvider,
+      tagLine,
+      note,
     } = receiptData;
 
     if (
       receiptNo &&
-      receiptDate &&
-      rentAmount &&
-      tenantName &&
-      fullAddress &&
-      fromDate &&
-      toDate &&
-      landlordName &&
-      landlordPAN
+      transactionDate &&
+      amount &&
+      transactionId &&
+      accountNo &&
+      bankReferenceNo &&
+      invoiceNo &&
+      serviceProvider &&
+      tagLine &&
+      note
     ) {
       setDisableSubmit(false);
     } else {
@@ -62,26 +64,28 @@ const RentReceiptContainer = () => {
     e.preventDefault();
     const {
       receiptNo,
-      receiptDate,
-      rentAmount,
-      tenantName,
-      fullAddress,
-      fromDate,
-      toDate,
-      landlordName,
-      landlordPAN,
+      transactionDate,
+      amount,
+      transactionId,
+      accountNo,
+      bankReferenceNo,
+      invoiceNo,
+      serviceProvider,
+      tagLine,
+      note,
     } = receiptData;
 
     if (
       !receiptNo ||
-      !receiptDate ||
-      !rentAmount ||
-      !tenantName ||
-      !fullAddress ||
-      !fromDate ||
-      !toDate ||
-      !landlordName ||
-      !landlordPAN
+      !transactionDate ||
+      !amount ||
+      !transactionId ||
+      !accountNo ||
+      !bankReferenceNo ||
+      !invoiceNo ||
+      !serviceProvider ||
+      !tagLine ||
+      !note
     ) {
       alert("Please fill in all the fields.");
       return;
@@ -94,11 +98,11 @@ const RentReceiptContainer = () => {
     <div className="container">
       {!submitted && (
         <form onSubmit={handleSubmit}>
-          <p className="h5 text-center my-3 text-muted">Rent Receipt Form</p>
+          <p className="h5 text-center my-3 text-muted">Wifi Receipt Form</p>
 
           <div className="row">
             <div className="col-12 offset-md-2 col-md-8 my-3">
-              <RentReceiptForm
+              <WifiReceiptForm
                 receiptData={receiptData}
                 setReceiptData={setReceiptData}
               />
@@ -122,9 +126,9 @@ const RentReceiptContainer = () => {
 
       {!!submitted && (
         <div className="my-3 ">
-          <p className="h5 text-center mb-0 text-muted">Rent Receipt Preview</p>
-          <RentReceiptToPrint ref={componentRef} receiptData={receiptData} />
-          <div className="d-flex justify-content-center align-items-center">
+          <p className="h5 text-center mb-0 text-muted">Wifi Receipt Preview</p>
+          <WifiReceiptToPrint ref={componentRef} receiptData={receiptData} />
+          <div className="d-flex justify-content-center align-items-center ">
             <ReactToPrint
               trigger={() => (
                 <button className="btn btn-primary">Print/Export to PDF</button>
@@ -144,4 +148,4 @@ const RentReceiptContainer = () => {
   );
 };
 
-export default RentReceiptContainer;
+export default WifiReceiptContainer;

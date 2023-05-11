@@ -1,26 +1,70 @@
 const data = {
   receiptNo: "Enter Receipt No",
-  receiptDate: "Enter Receipt Date",
-  rentAmount: "Enter Rent Amount",
-  tenantName: "Enter Tenant Name",
-  fullAddress: "Enter Full Address",
-  fromDate: "Enter From Date",
-  toDate: "Enter To Date",
-  landlordName: "Enter Landlord Name",
-  landlordPAN: "Enter Landlord PAN",
-  showStamp: false,
+  transactionDate: "Enter Transaction Date",
+  amount: "Enter Transaction Amount",
+  transactionId: "Enter Transaction ID",
+  accountNo: "Enter Account No",
+  bankReferenceNo: "Enter Bank Reference No",
+  invoiceNo: "Enter Invoice No",
+  serviceProvider: "Enter Service Provider",
+  tagLine: "Enter Tag Line",
+  note: "Enter Note",
 };
 
-const RentReceiptForm = ({ receiptData, setReceiptData }) => {
+const WifiReceiptForm = ({ receiptData, setReceiptData }) => {
   return (
     <div className="card mt-2 mb-3">
       <div className="card-body">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-md-1">
+            <div className="col-12 col-md-12">
+              <div className="mb-3">
+                <label htmlFor="serviceProvider" className="form-label">
+                  Service Provider
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="serviceProvider"
+                  value={receiptData?.serviceProvider}
+                  placeholder={data.serviceProvider}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      serviceProvider: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="col-12 col-md-8">
+              <div className="mb-3">
+                <label htmlFor="tagLine" className="form-label">
+                  Tag Line
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="tagLine"
+                  value={receiptData?.tagLine}
+                  placeholder={data.tagLine}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      tagLine: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="col-12 col-md-4">
               <div className="mb-3">
                 <label htmlFor="receiptNo" className="form-label">
-                  Sr No
+                  Receipt No
                 </label>
                 <input
                   type="text"
@@ -39,110 +83,21 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
               </div>
             </div>
 
-            <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="receiptDate" className="form-label">
-                  Receipt Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="receiptDate"
-                  value={receiptData?.receiptDate}
-                  placeholder={data.receiptDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      receiptDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="col-md-2">
-              <div className="mb-3">
-                <label htmlFor="rentAmount" className="form-label">
-                  Rent Amount
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="rentAmount"
-                  value={receiptData?.rentAmount}
-                  placeholder={data.rentAmount}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      rentAmount: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="fromDate" className="form-label">
-                  From Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="fromDate"
-                  value={receiptData?.fromDate}
-                  placeholder={data.fromDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      fromDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="toDate" className="form-label">
-                  To Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="toDate"
-                  value={receiptData?.toDate}
-                  placeholder={data.toDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      toDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-            </div>
-          </div>
-          <div className="row">
             <div className="col-md-4">
               <div className="mb-3">
-                <label htmlFor="tenantName" className="form-label">
-                  Tenant Name
+                <label htmlFor="transactionDate" className="form-label">
+                  Transaction Date
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="tenantName"
-                  value={receiptData?.tenantName}
-                  placeholder={data.tenantName}
+                  id="transactionDate"
+                  value={receiptData?.transactionDate}
+                  placeholder={data.transactionDate}
                   onChange={(e) =>
                     setReceiptData({
                       ...receiptData,
-                      tenantName: e.target.value,
+                      transactionDate: e.target.value,
                     })
                   }
                   required
@@ -152,19 +107,19 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
 
             <div className="col-md-4">
               <div className="mb-3">
-                <label htmlFor="landlordName" className="form-label">
-                  Landlord Name
+                <label htmlFor="transactionId" className="form-label">
+                  Transaction ID
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="landlordName"
-                  value={receiptData?.landlordName}
-                  placeholder={data.landlordName}
+                  id="transactionId"
+                  value={receiptData?.transactionId}
+                  placeholder={data.transactionId}
                   onChange={(e) =>
                     setReceiptData({
                       ...receiptData,
-                      landlordName: e.target.value,
+                      transactionId: e.target.value,
                     })
                   }
                   required
@@ -174,19 +129,85 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
 
             <div className="col-md-4">
               <div className="mb-3">
-                <label htmlFor="landlordPAN" className="form-label">
-                  Landlord PAN
+                <label htmlFor="amount" className="form-label">
+                  Amount
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="landlordPAN"
-                  value={receiptData?.landlordPAN}
-                  placeholder={data.landlordPAN}
+                  id="amount"
+                  value={receiptData?.amount}
+                  placeholder={data.amount}
                   onChange={(e) =>
                     setReceiptData({
                       ...receiptData,
-                      landlordPAN: e.target.value,
+                      amount: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="col-md-4">
+              <div className="mb-3">
+                <label htmlFor="accountNo" className="form-label">
+                  Account No
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="accountNo"
+                  value={receiptData?.accountNo}
+                  placeholder={data.accountNo}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      accountNo: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="col-md-4">
+              <div className="mb-3">
+                <label htmlFor="bankReferenceNo" className="form-label">
+                  Bank Reference No
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="bankReferenceNo"
+                  value={receiptData?.bankReferenceNo}
+                  placeholder={data.bankReferenceNo}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      bankReferenceNo: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="col-md-4">
+              <div className="mb-3">
+                <label htmlFor="invoiceNo" className="form-label">
+                  Invoice No
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="invoiceNo"
+                  value={receiptData?.invoiceNo}
+                  placeholder={data.invoiceNo}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      invoiceNo: e.target.value,
                     })
                   }
                   required
@@ -196,20 +217,19 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
 
             <div className="col-md-12">
               <div className="mb-3">
-                <label htmlFor="fullAddress" className="form-label">
-                  Full Address
+                <label htmlFor="note" className="form-label">
+                  Note
                 </label>
-                <textarea
+                <input
                   type="text"
                   className="form-control"
-                  id="fullAddress"
-                  rows={3}
-                  value={receiptData?.fullAddress}
-                  placeholder={data.fullAddress}
+                  id="note"
+                  value={receiptData?.note}
+                  placeholder={data.note}
                   onChange={(e) =>
                     setReceiptData({
                       ...receiptData,
-                      fullAddress: e.target.value,
+                      note: e.target.value,
                     })
                   }
                   required
@@ -223,4 +243,4 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
   );
 };
 
-export default RentReceiptForm;
+export default WifiReceiptForm;
