@@ -1,0 +1,28 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.receipt-template {
+  padding: 20px;
+  border: 1px solid black;
+  max-width: 700px;
+}
+
+.rent-receipt-title {
+  border-bottom: 1px solid black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.empty-space {
+  padding: 35px;
+}
+
+.stamp-img {
+  max-height: 125px;
+  padding-bottom: 25px;
+  margin-left: -20px;
+}
