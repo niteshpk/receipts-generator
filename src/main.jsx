@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import RentReceiptContainer from "./components/rent-receipt/RentReceiptContainer";
 import WifiReceiptContainer from "./components/wifi-receipt/WifiReceiptContainer";
+import LaptopSubmissionContainer from "./components/laptop-submission-receipt/LaptopSubmissionContainer";
 import App from "./App";
 import "./index.css";
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/wifi-receipt",
     element: <WifiReceiptContainer />,
+  },
+  {
+    path: "/laptop-submission-receipt",
+    element: <LaptopSubmissionContainer />,
   },
 ]);
 
