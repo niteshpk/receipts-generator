@@ -11,7 +11,7 @@ This is a simple web application that generates rent and wifi receipts. The app 
 
 ## Live Demo
 
-https://receipts-generator-niteshpk.vercel.app/
+https://receipts-generator.vercel.app/
 
 ### Prerequisites
 

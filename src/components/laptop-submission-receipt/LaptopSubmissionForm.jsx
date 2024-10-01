@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 const asset = {
   assetName: "Enter asset name",
@@ -22,16 +24,23 @@ const data = {
 
   dateOfIssue: "DD/MM/YYYY",
   candidateName: "Enter candidate name",
-  companyName: "Enter company name",
+  companyShortName: "Enter company short name",
+  companyFullName: "Enter company full name",
   laptop: {
     ...asset,
   },
   acceseries: {
     ...asset,
   },
+  termsAndConditions: "Enter terms and conditions",
 };
 
-const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
+const LaptopSubmissionForm = ({
+  receiptData,
+  termsAndConditions,
+  setReceiptData,
+  addRow,
+}) => {
   const [acceseries, setAcceseries] = useState([receiptData.acceseries]);
 
   if (!receiptData) return null;
@@ -57,8 +66,6 @@ const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
       return acc;
     });
 
-    console.log(index, obj);
-
     setReceiptData({
       ...receiptData,
       acceseries: newAcceseries,
@@ -70,7 +77,7 @@ const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
       <div className="card-body">
         <div className="container">
           <div className="row" key={1}>
-            <div className="col-12 col-md-5">
+            <div className="col-12 col-md-3">
               <div className="mb-3">
                 <label htmlFor="candidateName" className="form-label">
                   Candidate Name
@@ -91,21 +98,50 @@ const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
                 />
               </div>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-3">
               <div className="mb-3">
-                <label htmlFor="companyName" className="form-label">
-                  Company Name
+                <label htmlFor="companyShortName" className="form-label">
+                  Company Short Name
                 </label>
                 <input
                   type="text"
                   className="form-control"
-                  id="companyName"
-                  value={receiptData.companyName}
-                  placeholder={data.companyName}
+                  id="companyShortName"
+                  value={receiptData.companyShortName}
+                  placeholder={data.companyShortName}
                   onChange={(e) =>
                     setReceiptData({
                       ...receiptData,
-                      companyName: e.target.value,
+                      companyShortName: e.target.value,
+                      termsAndConditions: termsAndConditions.replace(
+                        "COMPANY_SHORT_NAME",
+                        e.target.value
+                      ),
+                    })
+                  }
+                  required
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-3">
+              <div className="mb-3">
+                <label htmlFor="companyFullName" className="form-label">
+                  Company Full Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="companyFullName"
+                  value={receiptData.companyFullName}
+                  placeholder={data.companyFullName}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      companyFullName: e.target.value,
+                      termsAndConditions: termsAndConditions.replace(
+                        "COMPANY_FULL_NAME",
+                        e.target.value
+                      ),
                     })
                   }
                   required
@@ -413,6 +449,17 @@ const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
                 </div>
               );
             })}
+
+            <div className="col-12 col-md-12">
+              <ReactQuill
+                theme="snow"
+                value={receiptData.termsAndConditions}
+                onChange={(e) => {
+                  receiptData.termsAndConditions = e;
+                }}
+                placeholder={data.termsAndConditions}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -67,7 +67,7 @@ const App = () => {
               </p>
               <div className="d-flex justify-content-between align-items-center">
                 <a
-                  href="/Sample-Wifi-Receipt.pdf"
+                  href="/Laptop-Submission-Form.pdf"
                   className="btn btn-outline-dark me-2"
                   target="_blank"
                 >

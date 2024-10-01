@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 const tableHead = {
   border: "1px solid #000",
   padding: "4px",
@@ -37,8 +38,6 @@ const body = {
   fontSize: "15px",
 };
 
-const listDisc = { listStyleType: "disc" };
-
 const signLine = { width: "65%", textAlign: "right" };
 
 const LaptopSubmissionTemplate = ({ receiptData }) => {
@@ -48,7 +47,6 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
 
   useEffect(() => {
     const { acceseries } = receiptData;
-    console.log(acceseries);
     setAcceseries(acceseries);
   }, [receiptData]);
 
@@ -67,7 +65,7 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
           </p>
         </div>
         <p>
-          <strong>Company:</strong> {receiptData.companyName}
+          <strong>Company:</strong> {receiptData.companyFullName}
         </p>
         <br />
 
@@ -119,56 +117,10 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
         </table>
         <hr />
 
-        <p>
-          I understand that the laptop being issued to me through management or
-          members of IT is the property of {receiptData.companyName} and must
-          always be treated in this manner.
-        </p>
+        <div
+          dangerouslySetInnerHTML={{ __html: receiptData.termsAndConditions }}
+        ></div>
 
-        <p>
-          Employees agree to the following actions regarding Company Laptops:
-        </p>
-        <ul>
-          <li>
-            Employee will not install personal software on company laptop.
-          </li>
-          <li>
-            Employee will not use company laptop for personal use such as
-            personal emails, IMs, web browsing, etc.
-          </li>
-          <li>
-            Employee will report Loss or Theft of company laptop to IT or
-            management immediately.
-          </li>
-          <li>
-            Employee will take all reasonable measures to ensure the physical
-            and digital security of the laptop, including:
-            <ul style={listDisc}>
-              <li>
-                Locking the laptop in a secure location when it is not in use.
-              </li>
-              <li>Changing the password as often as required by employer.</li>
-              <li>
-                Ensuring that Company provided Anti-virus, Firewall, or
-                Encryption software is functioning.
-              </li>
-            </ul>
-          </li>
-          <li>
-            In the event of termination, all company property, including Company
-            Laptops, must be returned to employer.
-          </li>
-        </ul>
-        <br />
-        <p>
-          "Codeblaze" means "Codeblaze Solutions Private Limited" and all of its
-          subsidiaries, from time to time.
-        </p>
-
-        <p>
-          My signature indicates I have received the equipment listed above and
-          I have thoroughly read, understand and agree to the above information.
-        </p>
         <div>
           <div style={signLine}>Employee Signature:</div>
           <div style={signLine}>Date:</div>

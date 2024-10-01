@@ -16,7 +16,9 @@ const assetObj = {
 const user = {
   dateOfIssue: "",
   candidateName: "",
-  companyName: "",
+  companyShortName: "",
+  companyFullName: "",
+  termsAndConditions: "",
 };
 
 const laptop = {
@@ -47,6 +49,7 @@ const LaptopSubmissionContainer = () => {
     laptop: { ...laptop },
     acceseries: [...acceseries],
   });
+
   const [disableSubmit, setDisableSubmit] = useState(true);
   const componentRef = useRef();
 
@@ -56,7 +59,8 @@ const LaptopSubmissionContainer = () => {
     const {
       dateOfIssue,
       candidateName,
-      companyName,
+      companyShortName,
+      companyFullName,
       laptop: {
         assetName: laptopAssetName,
         asset: laptopAsset,
@@ -78,7 +82,8 @@ const LaptopSubmissionContainer = () => {
     if (
       dateOfIssue &&
       candidateName &&
-      companyName &&
+      companyShortName &&
+      companyFullName &&
       laptopAssetName &&
       laptopAsset &&
       laptopMake &&
@@ -101,7 +106,8 @@ const LaptopSubmissionContainer = () => {
     const {
       dateOfIssue,
       candidateName,
-      companyName,
+      companyShortName,
+      companyFullName,
       laptop: {
         assetName: laptopAssetName,
         asset: laptopAsset,
@@ -121,19 +127,18 @@ const LaptopSubmissionContainer = () => {
     } = receiptData;
 
     if (
-      !dateOfIssue ||
-      !candidateName ||
-      !companyName ||
+      (!dateOfIssue || !candidateName || !companyShortName,
+      !companyFullName,
       !laptopAssetName ||
-      !laptopAsset ||
-      !laptopMake ||
-      !laptopModel ||
-      !laptopSerialNumber ||
-      !headPhoneAssetName ||
-      !headPhoneAsset ||
-      !headPhoneMake ||
-      !headPhoneModel ||
-      !headPhoneSerialNumber
+        !laptopAsset ||
+        !laptopMake ||
+        !laptopModel ||
+        !laptopSerialNumber ||
+        !headPhoneAssetName ||
+        !headPhoneAsset ||
+        !headPhoneMake ||
+        !headPhoneModel ||
+        !headPhoneSerialNumber)
     ) {
       alert("Please fill in all the fields.");
       return;
@@ -142,12 +147,12 @@ const LaptopSubmissionContainer = () => {
     setSubmitted(true);
   };
 
-  function addRow() {
+  const addRow = () => {
     setReceiptData({
       ...receiptData,
       acceseries: [...receiptData.acceseries, { ...assetObj, id: Date.now() }],
     });
-  }
+  };
 
   return (
     <div className="container">
@@ -162,13 +167,35 @@ const LaptopSubmissionContainer = () => {
               <LaptopSubmissionForm
                 receiptData={receiptData}
                 setReceiptData={setReceiptData}
+                termsAndConditions={user.termsAndConditions}
                 addRow={addRow}
               />
 
               <div className="text-center">
                 <button
+                  type="button"
+                  className="btn btn-outline-dark ms-2"
+                  onClick={() => {
+                    setReceiptData({
+                      ...receiptData,
+                      termsAndConditions: receiptData.termsAndConditions
+                        .replace(
+                          /COMPANY_SHORT_NAME/g,
+                          receiptData.companyShortName
+                        )
+                        .replace(
+                          /COMPANY_FULL_NAME/g,
+                          receiptData.companyFullName
+                        ),
+                    });
+                  }}
+                >
+                  Update Template
+                </button>
+
+                <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary ms-3"
                   disabled={disableSubmit}
                 >
                   Submit
