@@ -13,32 +13,61 @@ const assetObj = {
   serialNumber: "",
 };
 
+// const user = {
+//   dateOfIssue: "",
+//   candidateName: "",
+//   companyShortName: "",
+//   companyFullName: "",
+//   termsAndConditions: "",
+// };
+
+// const laptop = {
+//   ...assetObj,
+//   assetName: "",
+//   asset: "",
+//   make: "",
+//   model: "",
+//   serialNumber: "",
+// };
+
+// const acceseries = [
+//   {
+//     ...assetObj,
+//     id: 1,
+//     assetName: "",
+//     asset: "",
+//     make: "",
+//     model: "",
+//     serialNumber: "",
+//   },
+// ];
+
 const user = {
-  dateOfIssue: "",
-  candidateName: "",
-  companyShortName: "",
-  companyFullName: "",
-  termsAndConditions: "",
+  dateOfIssue: "31/08/2023",
+  candidateName: "Nitesh Kesarkar",
+  companyShortName: "Codeblaze",
+  companyFullName: "Codeblaze Solutions Pvt Ltd",
+  termsAndConditions: "test",
 };
 
 const laptop = {
   ...assetObj,
-  assetName: "",
-  asset: "",
-  make: "",
-  model: "",
-  serialNumber: "",
+  assetName: "CDBLZ-NB-008",
+  asset: "Laptop",
+  make: "Lenovo",
+  model: "Yoga Pro 7 Slim",
+  serialNumber: "PF3XZ8J0",
 };
 
 const acceseries = [
   {
     ...assetObj,
     id: 1,
-    assetName: "",
-    asset: "",
-    make: "",
-    model: "",
-    serialNumber: "",
+    assetName: "HP",
+    asset: "Headphone",
+    make: "Poly",
+    model: "V4320-M USB-A",
+    serialNumber: "FJBP0M",
   },
 ];
 

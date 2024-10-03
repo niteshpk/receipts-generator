@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReusableInput from "../app-input/app-input";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -35,12 +36,7 @@ const data = {
   termsAndConditions: "Enter terms and conditions",
 };
 
-const LaptopSubmissionForm = ({
-  receiptData,
-  termsAndConditions,
-  setReceiptData,
-  addRow,
-}) => {
+const LaptopSubmissionForm = ({ receiptData, setReceiptData, addRow }) => {
   const [acceseries, setAcceseries] = useState([receiptData.acceseries]);
 
   if (!receiptData) return null;
@@ -78,96 +74,64 @@ const LaptopSubmissionForm = ({
         <div className="container">
           <div className="row" key={1}>
             <div className="col-12 col-md-3">
-              <div className="mb-3">
-                <label htmlFor="candidateName" className="form-label">
-                  Candidate Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="candidateName"
-                  value={receiptData.candidateName}
-                  placeholder={data.candidateName}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      candidateName: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Candidate Name"
+                id="candidateName"
+                value={receiptData.candidateName}
+                placeholder={data.candidateName}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    candidateName: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
             <div className="col-12 col-md-3">
-              <div className="mb-3">
-                <label htmlFor="companyShortName" className="form-label">
-                  Company Short Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="companyShortName"
-                  value={receiptData.companyShortName}
-                  placeholder={data.companyShortName}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      companyShortName: e.target.value,
-                      termsAndConditions: termsAndConditions.replace(
-                        "COMPANY_SHORT_NAME",
-                        e.target.value
-                      ),
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Company Short Name"
+                id="companyShortName"
+                value={receiptData.companyShortName}
+                placeholder={data.companyShortName}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    companyShortName: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
             <div className="col-12 col-md-3">
-              <div className="mb-3">
-                <label htmlFor="companyFullName" className="form-label">
-                  Company Full Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="companyFullName"
-                  value={receiptData.companyFullName}
-                  placeholder={data.companyFullName}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      companyFullName: e.target.value,
-                      termsAndConditions: termsAndConditions.replace(
-                        "COMPANY_FULL_NAME",
-                        e.target.value
-                      ),
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Company Full Name"
+                id="companyFullName"
+                value={receiptData.companyFullName}
+                placeholder={data.companyFullName}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    companyFullName: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
             <div className="col-12 col-md-3">
-              <div className="mb-3">
-                <label htmlFor="dateOfIssue" className="form-label">
-                  Date of Issue
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="dateOfIssue"
-                  value={receiptData.dateOfIssue}
-                  placeholder={data.dateOfIssue}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      dateOfIssue: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Date of Issue"
+                id="dateOfIssue"
+                value={receiptData.dateOfIssue}
+                placeholder={data.dateOfIssue}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    dateOfIssue: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
             <hr className="my-3" />
             <div className="d-flex justify-content-between align-items-center ">
@@ -175,128 +139,98 @@ const LaptopSubmissionForm = ({
             </div>
             <div className="row">
               <div className="col-12 col-md-2">
-                <div className="mb-3">
-                  <label htmlFor="laptop-assetName" className="form-label">
-                    Asset Name
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="laptop-assetName"
-                    value={receiptData.laptop.assetName}
-                    placeholder={data.laptop.assetName}
-                    onChange={(e) =>
-                      setReceiptData({
-                        ...receiptData,
-                        laptop: {
-                          ...receiptData.laptop,
-                          assetName: e.target.value,
-                        },
-                      })
-                    }
-                    required
-                  />
-                </div>
+                <ReusableInput
+                  label="Asset Name"
+                  id="laptop-assetName"
+                  value={receiptData.laptop.assetName}
+                  placeholder={data.laptop.assetName}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      laptop: {
+                        ...receiptData.laptop,
+                        assetName: e.target.value,
+                      },
+                    })
+                  }
+                  required
+                />
               </div>
 
               <div className="col-12 col-md-2">
-                <div className="mb-3">
-                  <label htmlFor="laptop-asset" className="form-label">
-                    Asset
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="laptop-asset"
-                    value={receiptData.laptop.asset}
-                    placeholder={data.laptop.asset}
-                    onChange={(e) =>
-                      setReceiptData({
-                        ...receiptData,
-                        laptop: {
-                          ...receiptData.laptop,
-                          asset: e.target.value,
-                        },
-                      })
-                    }
-                    required
-                  />
-                </div>
+                <ReusableInput
+                  label="Asset"
+                  id="laptop-asset"
+                  value={receiptData.laptop.asset}
+                  placeholder={data.laptop.asset}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      laptop: {
+                        ...receiptData.laptop,
+                        asset: e.target.value,
+                      },
+                    })
+                  }
+                  required
+                />
               </div>
 
               <div className="col-12 col-md-2">
-                <div className="mb-3">
-                  <label htmlFor="laptop-make" className="form-label">
-                    Make
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="laptop-make"
-                    value={receiptData.laptop.make}
-                    placeholder={data.laptop.make}
-                    onChange={(e) =>
-                      setReceiptData({
-                        ...receiptData,
-                        laptop: {
-                          ...receiptData.laptop,
-                          make: e.target.value,
-                        },
-                      })
-                    }
-                    required
-                  />
-                </div>
+                <ReusableInput
+                  label="Make"
+                  id="laptop-make"
+                  value={receiptData.laptop.make}
+                  placeholder={data.laptop.make}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      laptop: {
+                        ...receiptData.laptop,
+                        make: e.target.value,
+                      },
+                    })
+                  }
+                  required
+                />
               </div>
 
               <div className="col-12 col-md-3">
-                <div className="mb-3">
-                  <label htmlFor="laptop-model" className="form-label">
-                    Model
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="laptop-model"
-                    value={receiptData.laptop.model}
-                    placeholder={data.laptop.model}
-                    onChange={(e) =>
-                      setReceiptData({
-                        ...receiptData,
-                        laptop: {
-                          ...receiptData.laptop,
-                          model: e.target.value,
-                        },
-                      })
-                    }
-                    required
-                  />
-                </div>
+                <ReusableInput
+                  label="Model"
+                  id="laptop-model"
+                  value={receiptData.laptop.model}
+                  placeholder={data.laptop.model}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      laptop: {
+                        ...receiptData.laptop,
+                        model: e.target.value,
+                      },
+                    })
+                  }
+                  required
+                />
               </div>
 
               <div className="col-12 col-md-2">
-                <div className="mb-3">
-                  <label htmlFor="laptop-serialNumber" className="form-label">
-                    Serial Number
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="laptop-serialNumber"
-                    value={receiptData.laptop.serialNumber}
-                    placeholder={data.laptop.serialNumber}
-                    onChange={(e) =>
-                      setReceiptData({
-                        ...receiptData,
-                        laptop: {
-                          ...receiptData.laptop,
-                          serialNumber: e.target.value,
-                        },
-                      })
-                    }
-                    required
-                  />
-                </div>
+                <ReusableInput
+                  label="Serial Number"
+                  id="laptop-serialNumber"
+                  value={receiptData.laptop.serialNumber}
+                  placeholder={data.laptop.serialNumber}
+                  onChange={(e) =>
+                    setReceiptData({
+                      ...receiptData,
+                      laptop: {
+                        ...receiptData.laptop,
+                        serialNumber: e.target.value,
+                      },
+                    })
+                  }
+                  required
+                />
               </div>
             </div>
             <hr className="my-3" />
@@ -309,124 +243,79 @@ const LaptopSubmissionForm = ({
               return (
                 <div className="row" key={index}>
                   <div className="col-12 col-md-2">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "assetName"}
-                        className="form-label"
-                      >
-                        Asset Name
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "assetName"}
-                        value={acc.assetName}
-                        placeholder={data.acceseries.assetName}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            assetName: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
+                    <ReusableInput
+                      label="Asset Name"
+                      id={"acc" + { index } + "assetName"}
+                      value={acc.assetName}
+                      placeholder={data.acceseries.assetName}
+                      onChange={(e) =>
+                        updateAccesseries(index, {
+                          ...acc,
+                          assetName: e.target.value,
+                        })
+                      }
+                      required
+                    />
                   </div>
                   <div className="col-12 col-md-2">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "asset"}
-                        className="form-label"
-                      >
-                        Asset
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "asset"}
-                        value={acc.asset}
-                        placeholder={data.acceseries.asset}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            asset: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
+                    <ReusableInput
+                      label="Asset "
+                      id={"acc" + { index } + "asset"}
+                      value={acc.asset}
+                      placeholder={data.acceseries.asset}
+                      onChange={(e) =>
+                        updateAccesseries(index, {
+                          ...acc,
+                          asset: e.target.value,
+                        })
+                      }
+                      required
+                    />
                   </div>
                   <div className="col-12 col-md-2">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "make"}
-                        className="form-label"
-                      >
-                        Make
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "make"}
-                        value={acc.make}
-                        placeholder={data.acceseries.make}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            make: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
+                    <ReusableInput
+                      label="Make"
+                      id={"acc" + { index } + "make"}
+                      value={acc.make}
+                      placeholder={data.acceseries.make}
+                      onChange={(e) =>
+                        updateAccesseries(index, {
+                          ...acc,
+                          make: e.target.value,
+                        })
+                      }
+                      required
+                    />
                   </div>
                   <div className="col-12 col-md-3">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "model"}
-                        className="form-label"
-                      >
-                        Model
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "model"}
-                        value={acc.model}
-                        placeholder={data.acceseries.model}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            model: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
+                    <ReusableInput
+                      label="Model"
+                      id={"acc" + { index } + "model"}
+                      value={acc.model}
+                      placeholder={data.acceseries.model}
+                      onChange={(e) =>
+                        updateAccesseries(index, {
+                          ...acc,
+                          model: e.target.value,
+                        })
+                      }
+                      required
+                    />
                   </div>
                   <div className="col-12 col-md-2">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "serialNumber"}
-                        className="form-label"
-                      >
-                        Serial Number
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "serialNumber"}
-                        value={acc.serialNumber}
-                        placeholder={data.acceseries.serialNumber}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            serialNumber: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
+                    <ReusableInput
+                      label="Serial Number"
+                      id={"acc" + { index } + "serialNumber"}
+                      value={acc.serialNumber}
+                      placeholder={data.acceseries.serialNumber}
+                      onChange={(e) =>
+                        updateAccesseries(index, {
+                          ...acc,
+                          serialNumber: e.target.value,
+                        })
+                      }
+                      required
+                    />
                   </div>
                   <div className="col-12 col-md-1 mb-3 d-flex justify-content-start align-items-end">
                     <button

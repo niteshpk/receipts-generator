@@ -1,3 +1,6 @@
+import ReusableInput from "../app-input/app-input";
+import ReusableTextarea from "../app-textarea/app-textarea";
+
 const data = {
   receiptNo: "Enter Receipt No",
   receiptDate: "Enter Receipt Date",
@@ -18,203 +21,149 @@ const RentReceiptForm = ({ receiptData, setReceiptData }) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-1">
-              <div className="mb-3">
-                <label htmlFor="receiptNo" className="form-label">
-                  Sr No
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="receiptNo"
-                  value={receiptData?.receiptNo}
-                  placeholder={data.receiptNo}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      receiptNo: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Sr No"
+                id="receiptNo"
+                value={receiptData?.receiptNo}
+                placeholder={data.receiptNo}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    receiptNo: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="receiptDate" className="form-label">
-                  Receipt Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="receiptDate"
-                  value={receiptData?.receiptDate}
-                  placeholder={data.receiptDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      receiptDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Receipt Date"
+                id="receiptDate"
+                value={receiptData?.receiptDate}
+                placeholder={data.receiptDate}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    receiptDate: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-2">
-              <div className="mb-3">
-                <label htmlFor="rentAmount" className="form-label">
-                  Rent Amount
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="rentAmount"
-                  value={receiptData?.rentAmount}
-                  placeholder={data.rentAmount}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      rentAmount: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Rent Amount"
+                id="rentAmount"
+                value={receiptData?.rentAmount}
+                placeholder={data.rentAmount}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    rentAmount: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="fromDate" className="form-label">
-                  From Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="fromDate"
-                  value={receiptData?.fromDate}
-                  placeholder={data.fromDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      fromDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="From Date"
+                id="fromDate"
+                value={receiptData?.fromDate}
+                placeholder={data.fromDate}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    fromDate: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-3">
-              <div className="mb-3">
-                <label htmlFor="toDate" className="form-label">
-                  To Date
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="toDate"
-                  value={receiptData?.toDate}
-                  placeholder={data.toDate}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      toDate: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="To Date"
+                id="toDate"
+                value={receiptData?.toDate}
+                placeholder={data.toDate}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    toDate: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
           </div>
           <div className="row">
             <div className="col-md-4">
-              <div className="mb-3">
-                <label htmlFor="tenantName" className="form-label">
-                  Tenant Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="tenantName"
-                  value={receiptData?.tenantName}
-                  placeholder={data.tenantName}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      tenantName: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Tenant Name"
+                id="tenantName"
+                value={receiptData?.tenantName}
+                placeholder={data.tenantName}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    tenantName: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-4">
-              <div className="mb-3">
-                <label htmlFor="landlordName" className="form-label">
-                  Landlord Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="landlordName"
-                  value={receiptData?.landlordName}
-                  placeholder={data.landlordName}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      landlordName: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Landlord Name"
+                id="landlordName"
+                value={receiptData?.landlordName}
+                placeholder={data.landlordName}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    landlordName: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-4">
-              <div className="mb-3">
-                <label htmlFor="landlordPAN" className="form-label">
-                  Landlord PAN
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="landlordPAN"
-                  value={receiptData?.landlordPAN}
-                  placeholder={data.landlordPAN}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      landlordPAN: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableInput
+                label="Landlord PAN"
+                id="landlordPAN"
+                value={receiptData?.landlordPAN}
+                placeholder={data.landlordPAN}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    landlordPAN: e.target.value,
+                  })
+                }
+                required
+              />
             </div>
 
             <div className="col-md-12">
-              <div className="mb-3">
-                <label htmlFor="fullAddress" className="form-label">
-                  Full Address
-                </label>
-                <textarea
-                  type="text"
-                  className="form-control"
-                  id="fullAddress"
-                  rows={3}
-                  value={receiptData?.fullAddress}
-                  placeholder={data.fullAddress}
-                  onChange={(e) =>
-                    setReceiptData({
-                      ...receiptData,
-                      fullAddress: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
+              <ReusableTextarea
+                label="Full Address"
+                id="fullAddress"
+                value={receiptData?.fullAddress}
+                placeholder={data.fullAddress}
+                onChange={(e) =>
+                  setReceiptData({
+                    ...receiptData,
+                    fullAddress: e.target.value,
+                  })
+                }
+                rows={3}
+                required
+              />
             </div>
           </div>
         </div>
