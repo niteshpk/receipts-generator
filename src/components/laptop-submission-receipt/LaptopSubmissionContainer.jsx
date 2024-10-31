@@ -3,28 +3,32 @@ import LaptopSubmissionForm from "./LaptopSubmissionForm";
 import LaptopSubmissionReceiptToPrint from "./LaptopSubmissionReceiptToPrint";
 import ReactToPrint from "react-to-print";
 import { Link } from "react-router-dom";
+import { termsAndConditions } from "./termsAndConditions";
+
+const today = new Date();
 
 const assetObj = {
   id: 0,
   assetName: "",
-  asset: "",
   make: "",
   model: "",
   serialNumber: "",
 };
 
 const user = {
-  dateOfIssue: "",
+  dateOfIssue: `${today.getDate()}/${
+    today.getMonth() + 1
+  }/${today.getFullYear()}`,
   candidateName: "",
-  companyShortName: "",
-  companyFullName: "",
-  termsAndConditions: "",
+  companyShortName: "Codeblaze",
+  companyFullName: "Codeblaze Solutions Private Limited",
+  termsAndConditions,
 };
 
 const laptop = {
   ...assetObj,
-  assetName: "",
-  asset: "",
+  assetName: "Laptop",
+  asset: "CDBLZ-NB-0",
   make: "",
   model: "",
   serialNumber: "",
@@ -35,7 +39,6 @@ const acceseries = [
     ...assetObj,
     id: 1,
     assetName: "",
-    asset: "",
     make: "",
     model: "",
     serialNumber: "",
@@ -43,15 +46,15 @@ const acceseries = [
 ];
 
 const LaptopSubmissionContainer = () => {
+  const componentRef = useRef();
   const [submitted, setSubmitted] = useState(false);
+  const [fileName, setFileName] = useState("");
   const [receiptData, setReceiptData] = useState({
     ...user,
     laptop: { ...laptop },
     acceseries: [...acceseries],
   });
-
   const [disableSubmit, setDisableSubmit] = useState(true);
-  const componentRef = useRef();
 
   if (!receiptData) return null;
 
@@ -71,7 +74,6 @@ const LaptopSubmissionContainer = () => {
       acceseries: {
         0: {
           assetName: headPhoneAssetName,
-          asset: headPhoneAsset,
           make: headPhoneMake,
           model: headPhoneModel,
           serialNumber: headPhoneSerialNumber,
@@ -90,7 +92,6 @@ const LaptopSubmissionContainer = () => {
       laptopModel &&
       laptopSerialNumber &&
       headPhoneAssetName &&
-      headPhoneAsset &&
       headPhoneMake &&
       headPhoneModel &&
       headPhoneSerialNumber
@@ -99,7 +100,22 @@ const LaptopSubmissionContainer = () => {
     } else {
       setDisableSubmit(true);
     }
+
+    setFileName(
+      `${receiptData.laptop.asset?.trim()}_${receiptData.candidateName.trim()}`
+    );
   }, [receiptData]);
+
+  useEffect(() => handleTemplateVariableChanges(receiptData), []);
+
+  const handleTemplateVariableChanges = (data) => {
+    setReceiptData({
+      ...data,
+      termsAndConditions: termsAndConditions
+        .replace(/_COMPANY_SHORT_NAME_/g, data.companyShortName)
+        .replace(/_COMPANY_FULL_NAME_/g, data.companyFullName),
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -118,7 +134,6 @@ const LaptopSubmissionContainer = () => {
       acceseries: {
         0: {
           assetName: headPhoneAssetName,
-          asset: headPhoneAsset,
           make: headPhoneMake,
           model: headPhoneModel,
           serialNumber: headPhoneSerialNumber,
@@ -135,7 +150,6 @@ const LaptopSubmissionContainer = () => {
         !laptopModel ||
         !laptopSerialNumber ||
         !headPhoneAssetName ||
-        !headPhoneAsset ||
         !headPhoneMake ||
         !headPhoneModel ||
         !headPhoneSerialNumber)
@@ -167,32 +181,11 @@ const LaptopSubmissionContainer = () => {
               <LaptopSubmissionForm
                 receiptData={receiptData}
                 setReceiptData={setReceiptData}
-                termsAndConditions={user.termsAndConditions}
                 addRow={addRow}
+                handleTemplateVariableChanges={handleTemplateVariableChanges}
               />
 
               <div className="text-center">
-                <button
-                  type="button"
-                  className="btn btn-outline-dark ms-2"
-                  onClick={() => {
-                    setReceiptData({
-                      ...receiptData,
-                      termsAndConditions: receiptData.termsAndConditions
-                        .replace(
-                          /COMPANY_SHORT_NAME/g,
-                          receiptData.companyShortName
-                        )
-                        .replace(
-                          /COMPANY_FULL_NAME/g,
-                          receiptData.companyFullName
-                        ),
-                    });
-                  }}
-                >
-                  Update Template
-                </button>
-
                 <button
                   type="submit"
                   className="btn btn-primary ms-3"
@@ -225,6 +218,7 @@ const LaptopSubmissionContainer = () => {
                 <button className="btn btn-primary">Print/Export to PDF</button>
               )}
               content={() => componentRef.current}
+              documentTitle={`${fileName}.pdf`}
             />
             <button
               className="btn btn-outline-dark ms-2"

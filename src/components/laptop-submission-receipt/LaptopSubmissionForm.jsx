@@ -3,45 +3,44 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
 const asset = {
-  assetName: "Enter asset name",
-  asset: "Enter asset",
-  make: "Enter manufacturer name",
-  model: "Enter model",
-  serialNumber: "Enter serial number",
+  assetName: "Asset name",
+  make: "Manufacturer name",
+  model: "Model",
+  serialNumber: "Serial number",
 };
 
 const data = {
-  receiptNo: "Enter Receipt No",
-  transactionDate: "Enter Transaction Date",
-  amount: "Enter Transaction Amount",
-  transactionId: "Enter Transaction ID",
-  accountNo: "Enter Account No",
-  bankReferenceNo: "Enter Bank Reference No",
-  invoiceNo: "Enter Invoice No",
-  serviceProvider: "Enter Service Provider",
-  tagLine: "Enter Tag Line",
-  note: "Enter Note",
-
+  receiptNo: "Receipt No",
+  transactionDate: "Transaction Date",
+  amount: "Transaction Amount",
+  transactionId: "Transaction ID",
+  accountNo: "Account No",
+  bankReferenceNo: "Bank Reference No",
+  invoiceNo: "Invoice No",
+  serviceProvider: "Service Provider",
+  tagLine: "Tag Line",
+  note: "Note",
   dateOfIssue: "DD/MM/YYYY",
-  candidateName: "Enter candidate name",
-  companyShortName: "Enter company short name",
-  companyFullName: "Enter company full name",
+  candidateName: "Candidate name",
+  companyShortName: "Company short name",
+  companyFullName: "Company full name",
   laptop: {
     ...asset,
+    asset: "Asset",
   },
   acceseries: {
     ...asset,
   },
-  termsAndConditions: "Enter terms and conditions",
+  termsAndConditions: "Terms and conditions",
 };
 
 const LaptopSubmissionForm = ({
   receiptData,
-  termsAndConditions,
   setReceiptData,
   addRow,
+  handleTemplateVariableChanges,
 }) => {
-  const [acceseries, setAcceseries] = useState([receiptData.acceseries]);
+  const [acceseries, setAcceseries] = useState([]);
 
   if (!receiptData) return null;
 
@@ -109,21 +108,23 @@ const LaptopSubmissionForm = ({
                   id="companyShortName"
                   value={receiptData.companyShortName}
                   placeholder={data.companyShortName}
-                  onChange={(e) =>
+                  onChange={(e) => {
                     setReceiptData({
                       ...receiptData,
                       companyShortName: e.target.value,
-                      termsAndConditions: termsAndConditions.replace(
-                        "COMPANY_SHORT_NAME",
-                        e.target.value
-                      ),
-                    })
-                  }
+                      companyFullName: receiptData.companyFullName,
+                    });
+                    handleTemplateVariableChanges({
+                      ...receiptData,
+                      companyShortName: e.target.value,
+                      companyFullName: receiptData.companyFullName,
+                    });
+                  }}
                   required
                 />
               </div>
             </div>
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-4">
               <div className="mb-3">
                 <label htmlFor="companyFullName" className="form-label">
                   Company Full Name
@@ -134,21 +135,24 @@ const LaptopSubmissionForm = ({
                   id="companyFullName"
                   value={receiptData.companyFullName}
                   placeholder={data.companyFullName}
-                  onChange={(e) =>
+                  onChange={(e) => {
                     setReceiptData({
                       ...receiptData,
                       companyFullName: e.target.value,
-                      termsAndConditions: termsAndConditions.replace(
-                        "COMPANY_FULL_NAME",
-                        e.target.value
-                      ),
-                    })
-                  }
+                      companyShortName: receiptData.companyShortName,
+                    });
+
+                    handleTemplateVariableChanges({
+                      ...receiptData,
+                      companyFullName: e.target.value,
+                      companyShortName: receiptData.companyShortName,
+                    });
+                  }}
                   required
                 />
               </div>
             </div>
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-2">
               <div className="mb-3">
                 <label htmlFor="dateOfIssue" className="form-label">
                   Date of Issue
@@ -199,7 +203,7 @@ const LaptopSubmissionForm = ({
                 </div>
               </div>
 
-              <div className="col-12 col-md-2">
+              <div className="col-12 col-md-3">
                 <div className="mb-3">
                   <label htmlFor="laptop-asset" className="form-label">
                     Asset
@@ -332,31 +336,7 @@ const LaptopSubmissionForm = ({
                       />
                     </div>
                   </div>
-                  <div className="col-12 col-md-2">
-                    <div className="mb-3">
-                      <label
-                        htmlFor={"acc" + { index } + "asset"}
-                        className="form-label"
-                      >
-                        Asset
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id={"acc" + { index } + "asset"}
-                        value={acc.asset}
-                        placeholder={data.acceseries.asset}
-                        onChange={(e) =>
-                          updateAccesseries(index, {
-                            ...acc,
-                            asset: e.target.value,
-                          })
-                        }
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="col-12 col-md-2">
+                  <div className="col-12 col-md-3">
                     <div className="mb-3">
                       <label
                         htmlFor={"acc" + { index } + "make"}
@@ -404,7 +384,7 @@ const LaptopSubmissionForm = ({
                       />
                     </div>
                   </div>
-                  <div className="col-12 col-md-2">
+                  <div className="col-12 col-md-3">
                     <div className="mb-3">
                       <label
                         htmlFor={"acc" + { index } + "serialNumber"}

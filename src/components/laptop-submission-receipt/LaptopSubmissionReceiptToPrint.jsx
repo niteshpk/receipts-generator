@@ -1,10 +1,12 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import LaptopSubmissionTemplate from "./LaptopSubmissionTemplate";
 
-class LaptopSubmissionReceiptToPrint extends React.Component {
-  render() {
-    return <LaptopSubmissionTemplate receiptData={this.props.receiptData} />;
-  }
-}
+const LaptopSubmissionReceiptToPrint = forwardRef((props, ref) => {
+  return (
+    <div ref={ref}>
+      <LaptopSubmissionTemplate receiptData={props.receiptData} />
+    </div>
+  );
+});
 
 export default LaptopSubmissionReceiptToPrint;
