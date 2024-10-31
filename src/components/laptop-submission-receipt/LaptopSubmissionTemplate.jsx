@@ -73,16 +73,18 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
 
         <table style={table}>
           <thead>
-            <th style={tableHead}>Asset Name</th>
-            <th style={tableHead}>Asset</th>
-            <th style={tableHead}>Make</th>
-            <th style={tableHead}>Model</th>
-            <th style={tableHead}>Serial Number</th>
+            <tr>
+              <th style={tableHead}>Asset Name</th>
+              <th style={tableHead}>Asset</th>
+              <th style={tableHead}>Make</th>
+              <th style={tableHead}>Model</th>
+              <th style={tableHead}>Serial Number</th>
+            </tr>
           </thead>
           <tbody>
             <tr>
-              <td style={tableCell}>{receiptData.laptop.asset}</td>
               <td style={tableCell}>{receiptData.laptop.assetName}</td>
+              <td style={tableCell}>{receiptData.laptop.asset}</td>
               <td style={tableCell}>{receiptData.laptop.make}</td>
               <td style={tableCell}>{receiptData.laptop.model}</td>
               <td style={tableCell}>{receiptData.laptop.serialNumber}</td>
@@ -97,7 +99,6 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
           <thead>
             <tr>
               <th style={tableHead}>Asset Name</th>
-              <th style={tableHead}>Asset</th>
               <th style={tableHead}>Make</th>
               <th style={tableHead}>Model</th>
               <th style={tableHead}>Serial Number</th>
@@ -107,7 +108,6 @@ const LaptopSubmissionTemplate = ({ receiptData }) => {
             {acceseries.map((acc) => (
               <tr key={acc.id}>
                 <td style={tableCell}>{acc.assetName}</td>
-                <td style={tableCell}>{acc.asset}</td>
                 <td style={tableCell}>{acc.make}</td>
                 <td style={tableCell}>{acc.model}</td>
                 <td style={tableCell}>{acc.serialNumber}</td>
