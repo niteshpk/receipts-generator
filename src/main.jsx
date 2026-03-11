@@ -8,6 +8,7 @@ import WifiReceiptContainer from "./components/wifi-receipt/WifiReceiptContainer
 import LaptopSubmissionContainer from "./components/laptop-submission-receipt/LaptopSubmissionContainer";
 import BusTicketContainer from "./components/bus-ticket/BusTicketContainer";
 import OlaReceiptContainer from "./components/ola-receipt/OlaReceiptContainer";
+import IrctcReceiptContainer from "./components/irctc-receipt/IrctcReceiptContainer";
 import App from "./App";
 import "./index.css";
 
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/ola-receipt",
     element: <OlaReceiptContainer />,
+  },
+  {
+    path: "/irctc-receipt",
+    element: <IrctcReceiptContainer />,
   },
 ]);
 

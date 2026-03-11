@@ -132,6 +132,23 @@ const App = () => {
             </div>
           </div>
         </div>
+        <div className="col-12 col-md-6 mb-3">
+          <div className="card">
+            <h5 className="card-header">IRCTC Railway Receipt</h5>
+            <div className="card-body">
+              <p className="card-text">
+                Provide train booking details to generate an IRCTC style
+                railway receipt with passenger details, fare breakdown,
+                and all standard sections. Export/download as PDF.
+              </p>
+              <div className="d-flex justify-content-between align-items-center">
+                <Link to="/irctc-receipt" className="btn btn-primary">
+                  Generate IRCTC Receipt
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

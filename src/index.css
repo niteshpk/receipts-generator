@@ -987,3 +987,296 @@
     print-color-adjust: exact;
   }
 }
+
+/* ===== IRCTC Receipt Styles ===== */
+.irctc-wrapper {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.irctc-receipt {
+  background: #fff;
+  padding: 0;
+}
+
+/* System notice bar */
+.irctc-notice {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.irctc-notice a {
+  color: #1a73e8;
+}
+
+/* Aadhaar notice */
+.irctc-aadhaar-notice {
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #e65100;
+  font-weight: bold;
+  background: none;
+  border: none;
+}
+
+/* Ticket Confirmation header — text only, no background */
+.irctc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  border-bottom: 2px solid #1565c0;
+  margin-bottom: 6px;
+  background: none;
+}
+
+.irctc-header-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #c62828;
+}
+
+.irctc-header-logo {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1565c0;
+}
+
+/* Body */
+.irctc-body {
+  padding: 4px 10px 10px;
+}
+
+.irctc-dear {
+  margin-bottom: 2px;
+  font-size: 12px;
+}
+
+.irctc-thankyou {
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* Booking details 6-column grid table — light borders */
+.irctc-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 11px;
+}
+
+.irctc-details-table td {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.irctc-details-table tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+
+.irctc-details-table td strong {
+  color: #333;
+}
+
+/* Section headers — colored text with bottom border, no background */
+.irctc-section-header {
+  padding: 3px 0;
+  font-weight: bold;
+  font-size: 12px;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  border-bottom: 2px solid currentColor;
+  background: none;
+}
+
+.irctc-section-passenger {
+  color: #2e7d32;
+}
+
+.irctc-section-fare {
+  color: #2e7d32;
+}
+
+.irctc-section-mustread {
+  color: #c62828;
+}
+
+.irctc-section-howto {
+  color: #2e7d32;
+}
+
+.irctc-section-care {
+  color: #1565c0;
+}
+
+.irctc-section-hotels {
+  color: #bf360c;
+}
+
+/* Passenger table — clean, minimal borders */
+.irctc-passenger-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 6px;
+  font-size: 11px;
+}
+
+.irctc-passenger-table th {
+  background: none;
+  border-bottom: 1px solid #999;
+  padding: 3px 6px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.irctc-passenger-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 3px 6px;
+}
+
+/* Fare table — clean, minimal borders */
+.irctc-fare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2px;
+  font-size: 11px;
+}
+
+.irctc-fare-table th {
+  background: none;
+  border-bottom: 1px solid #999;
+  padding: 3px 6px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.irctc-fare-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 3px 6px;
+}
+
+.irctc-gateway-note {
+  font-size: 10px;
+  color: #777;
+  margin-bottom: 4px;
+}
+
+/* Must Read list */
+.irctc-mustread-list {
+  padding-left: 18px;
+  font-size: 11px;
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+
+.irctc-mustread-list li {
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+/* How to grid */
+.irctc-howto-grid {
+  font-size: 11px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.irctc-howto-grid ul {
+  padding-left: 18px;
+  margin: 2px 0;
+}
+
+.irctc-howto-grid li {
+  margin-bottom: 2px;
+  color: #1565c0;
+  cursor: pointer;
+}
+
+/* Customer Care list */
+.irctc-care-list {
+  padding-left: 18px;
+  font-size: 11px;
+  margin-bottom: 4px;
+  margin-top: 2px;
+}
+
+.irctc-care-list li {
+  margin-bottom: 2px;
+  line-height: 1.4;
+}
+
+.irctc-care-list a {
+  color: #1a73e8;
+}
+
+/* Hotels text */
+.irctc-hotels-text {
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.irctc-hotels-text a {
+  color: #1a73e8;
+}
+
+/* Separator — asterisks line */
+.irctc-separator {
+  border: none;
+  text-align: center;
+  margin: 8px 0;
+  font-size: 10px;
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 1px;
+}
+
+/* No print message */
+.irctc-noprint-msg {
+  text-align: center;
+  color: #2e7d32;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+/* Sign off */
+.irctc-signoff {
+  font-size: 11px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Print styles for IRCTC */
+@media print {
+  .irctc-wrapper {
+    max-width: 100%;
+    margin: 10px;
+    font-size: 11px;
+  }
+
+  .irctc-section-header {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .irctc-notice {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
