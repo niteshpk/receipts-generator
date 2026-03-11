@@ -7,6 +7,7 @@ import RentReceiptContainer from "./components/rent-receipt/RentReceiptContainer
 import WifiReceiptContainer from "./components/wifi-receipt/WifiReceiptContainer";
 import LaptopSubmissionContainer from "./components/laptop-submission-receipt/LaptopSubmissionContainer";
 import BusTicketContainer from "./components/bus-ticket/BusTicketContainer";
+import OlaReceiptContainer from "./components/ola-receipt/OlaReceiptContainer";
 import App from "./App";
 import "./index.css";
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/bus-ticket",
     element: <BusTicketContainer />,
+  },
+  {
+    path: "/ola-receipt",
+    element: <OlaReceiptContainer />,
   },
 ]);
 

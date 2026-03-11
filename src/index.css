@@ -406,3 +406,584 @@
     print-color-adjust: exact;
   }
 }
+
+/* ========== Ola Receipt Styles ========== */
+
+.ola-receipt-wrapper {
+  max-width: 650px;
+  margin: 20px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.ola-receipt {
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* Top bar */
+.ola-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background-color: #f5f5f5;
+}
+
+.ola-date {
+  font-size: 13px;
+  color: #555;
+}
+
+.ola-logo {
+  height: 32px;
+  width: auto;
+}
+
+/* Big amount */
+.ola-amount-section {
+  text-align: center;
+  padding: 24px 24px 16px;
+}
+
+.ola-big-amount {
+  font-size: 42px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.ola-crn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.ola-crn-line {
+  display: inline-block;
+  width: 40px;
+  height: 1px;
+  background-color: #bbb;
+}
+
+.ola-crn-text {
+  font-size: 12px;
+  color: #777;
+  letter-spacing: 0.5px;
+}
+
+.ola-thanks {
+  font-size: 13px;
+  color: #555;
+  font-style: italic;
+}
+
+/* Two-column layout */
+.ola-main-content {
+  display: flex;
+  padding: 0 24px 16px;
+  gap: 24px;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.ola-left-col {
+  flex: 0 0 45%;
+  max-width: 45%;
+}
+
+.ola-right-col {
+  flex: 1;
+}
+
+.ola-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Map */
+.ola-map-container {
+  margin-bottom: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.ola-map-iframe {
+  width: 100%;
+  height: 250px;
+  display: block;
+  border: none;
+  pointer-events: none;
+}
+
+.ola-map-placeholder {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 12px;
+}
+
+/* Driver */
+.ola-driver-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ola-driver-icon {
+  font-size: 18px;
+}
+
+.ola-driver-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Travel stats */
+.ola-travel-stats {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+}
+
+.ola-stats-icon {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.ola-travel-stats strong {
+  font-size: 12px;
+}
+
+.ola-distance-note {
+  font-size: 10px;
+  color: #999;
+  margin-top: 2px;
+}
+
+/* Car row */
+.ola-car-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ola-car-icon {
+  font-size: 18px;
+}
+
+/* Bill details */
+.ola-bill-table {
+  margin-bottom: 12px;
+}
+
+.ola-bill-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+}
+
+.ola-bill-row-bordered {
+  border-bottom: 1px solid #eee;
+}
+
+.ola-bill-amount {
+  font-weight: 600;
+  text-align: right;
+}
+
+.ola-bill-total {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 4px;
+}
+
+.ola-bill-total-amount {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.ola-rounded {
+  font-size: 11px;
+  color: #888;
+  font-weight: 400;
+}
+
+.ola-exceed-note {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.ola-queries {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ola-queries a {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+.ola-disclaimer {
+  font-size: 11px;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ola-note {
+  font-size: 11px;
+  color: #9b9b9b;
+  line-height: 1.5;
+}
+
+/* One-way Trip */
+.ola-trip-section {
+  padding: 0 24px 16px;
+}
+
+.ola-trip-heading {
+  font-size: 14px;
+  font-weight: 700;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+  margin-bottom: 14px;
+}
+
+.ola-trip-timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.ola-trip-stop {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.ola-trip-time {
+  width: 72px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.ola-trip-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.ola-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ola-dot-green {
+  background-color: #6abf40;
+}
+
+.ola-dot-red {
+  background-color: #e74c3c;
+}
+
+.ola-dot-line {
+  width: 2px;
+  height: 40px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #999 0px,
+    #999 3px,
+    transparent 3px,
+    transparent 6px
+  );
+  margin: 2px 0;
+}
+
+.ola-trip-address {
+  font-size: 12px;
+  color: #333;
+  line-height: 1.5;
+  padding-bottom: 8px;
+}
+
+/* Payment */
+.ola-payment-section {
+  padding: 0 24px 16px;
+}
+
+.ola-payment-heading {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.ola-payment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.ola-payment-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.ola-payment-icon {
+  font-size: 16px;
+}
+
+.ola-payment-amount {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Footer */
+.ola-footer {
+  padding: 14px 24px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.ola-footer-grievance {
+  font-size: 10px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.ola-footer-address {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.ola-footer-bar {
+  background-color: #eee;
+  text-align: center;
+  padding: 8px 24px;
+  font-size: 11px;
+  color: #555;
+}
+
+/* ---- Ola Tax Invoice (Page 2) ---- */
+.ola-invoice {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 28px 32px;
+  font-size: 13px;
+  color: #333;
+}
+
+.ola-inv-title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.ola-inv-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.ola-inv-left {
+  flex: 0 0 50%;
+}
+
+.ola-inv-logo {
+  height: 40px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.ola-inv-company {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.ola-inv-right {
+  text-align: right;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.ola-inv-row {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #9b9b9b;
+  padding: 8px 0;
+  font-size: 12px;
+}
+
+.ola-inv-label {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+
+.ola-inv-supply {
+  border-top: 1px solid #9b9b9b;
+  padding: 8px 0 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.ola-inv-desc-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 8px 0 4px;
+}
+
+.ola-inv-dashed {
+  border-bottom: 2px dashed #9b9b9b;
+  margin-bottom: 10px;
+}
+
+.ola-inv-ride-num {
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 4px;
+}
+
+.ola-inv-line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+.ola-inv-tax-pct {
+  font-size: 11px;
+  color: #9b9b9b;
+}
+
+.ola-inv-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-top: 2px solid #9b9b9b;
+  border-bottom: 1px solid #ddd;
+}
+
+.ola-inv-total-value {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+
+.ola-inv-total-amount {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ola-inv-payment {
+  padding: 14px 0;
+  font-size: 12px;
+}
+
+.ola-inv-payment strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.ola-inv-pay-grid {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 4px 12px;
+  font-size: 12px;
+}
+
+.ola-inv-notes {
+  border-top: 2px solid #9b9b9b;
+  padding-top: 12px;
+  font-size: 11px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.ola-inv-notes-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.ola-inv-notes ol {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.ola-inv-notes li {
+  margin-bottom: 4px;
+}
+
+/* Print styles for Ola */
+@media print {
+  .ola-receipt-wrapper {
+    max-width: 100%;
+    margin: 50px;
+  }
+
+  .ola-receipt {
+    page-break-after: always;
+  }
+
+  .ola-invoice {
+    page-break-before: always;
+  }
+
+  .ola-topbar,
+  .ola-footer-bar {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ola-dot-green,
+  .ola-dot-red {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

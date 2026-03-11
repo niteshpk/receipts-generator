@@ -108,6 +108,30 @@ const App = () => {
             </div>
           </div>
         </div>
+        <div className="col-12 col-md-6 mb-3">
+          <div className="card">
+            <h5 className="card-header">Ola Receipt</h5>
+            <div className="card-body">
+              <p className="card-text">
+                Provide ride details to generate an Ola style cab receipt.
+                Preview includes map, fare breakdown, and payment info.
+                Export/download as PDF.
+              </p>
+              <div className="d-flex justify-content-between align-items-center">
+                <a
+                  href="/ola.pdf"
+                  className="btn btn-outline-dark me-2"
+                  target="_blank"
+                >
+                  Sample Ola Receipt
+                </a>
+                <Link to="/ola-receipt" className="btn btn-primary">
+                  Generate Ola Receipt
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
