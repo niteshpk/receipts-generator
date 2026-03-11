@@ -26,3 +26,383 @@
   padding-bottom: 25px;
   margin-left: -20px;
 }
+
+/* ========== Bus Ticket (RedBus) Styles ========== */
+
+.bus-ticket-wrapper {
+  max-width: 750px;
+  margin: 20px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #333;
+}
+
+.bus-ticket-page {
+  margin-bottom: 0;
+}
+
+/* Black separator between pages */
+.bt-page-separator {
+  /* background-color: #2d2d2d; */
+  /* height: 40px; */
+  /* width: 100%; */
+}
+
+/* ---- Header ---- */
+.bt-header {
+  background-color: #e05f5f;
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  overflow: hidden;
+}
+
+.bt-header-top {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px 8px;
+  background-color: #d84e55;
+}
+
+.bt-logo {
+  width: 55px;
+  height: auto;
+  margin-right: 20px;
+  background-color: #d84e55;
+  border-radius: 20px;
+}
+
+.bt-header-info {
+  flex: 1;
+}
+
+.bt-header-title {
+  margin: 0 0 1px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.bt-header-route {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.95;
+}
+
+.bt-header-bottom {
+  padding: 5px 24px;
+  font-size: 11px;
+  text-align: center;
+  background-color: #d84e55;
+  border-top: 1px solid #df6d73;
+}
+
+.bt-header-sep {
+  margin: 0 14px;
+}
+
+/* ---- Greeting ---- */
+.bt-greeting {
+  padding: 12px 24px 8px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+}
+
+.bt-greeting p {
+  margin-bottom: 4px;
+  font-size: 13px;
+  color: #333;
+}
+
+.bt-savings {
+  color: #2e8b57 !important;
+  font-weight: 700;
+  font-size: 14px !important;
+}
+
+/* ---- Save Paper Banner ---- */
+.bt-save-paper {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #3d8b5e 0%, #5daa80 60%, #5daa80 100%);
+  color: #fff;
+  padding: 10px 22px;
+  margin: 10px 24px 14px;
+  border-radius: 40px;
+}
+
+.bt-save-paper-icon {
+  font-size: 26px;
+  margin-right: 12px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bt-save-paper strong {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 1px;
+}
+
+/* ---- Details Box ---- */
+.bt-details-box {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  margin: 0 0 0;
+}
+
+.bt-details-header {
+  background-color: #e8e8f0;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+}
+
+.bt-section {
+  padding: 10px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.bt-section:last-child {
+  border-bottom: none;
+}
+
+.bt-label {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 3px;
+  text-transform: capitalize;
+}
+
+.bt-value-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.bt-icon {
+  font-size: 14px;
+  margin-top: 1px;
+  color: #d44;
+}
+
+.bt-phone {
+  font-weight: 700;
+  margin: 2px 0 0 20px;
+  font-size: 12px;
+  color: #1a5fb4;
+}
+
+/* ---- Passenger row ---- */
+.bt-passenger-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bt-passenger-left {
+  flex: 1;
+}
+
+.bt-passenger-right {
+  text-align: left;
+  min-width: 100px;
+  padding-left: 20px;
+}
+
+/* ---- Cancellation Policy ---- */
+.bt-cancel-body {
+  padding: 24px;
+}
+
+.bt-cancel-table {
+  width: auto;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+
+.bt-cancel-table th {
+  text-align: left;
+  padding: 0 16px 8px 0;
+  font-weight: 700;
+  font-size: 13px;
+  color: #333;
+}
+
+.bt-cancel-table td {
+  padding: 10px 16px 10px 12px;
+  border: 1px solid #ddd;
+  color: #555;
+  vertical-align: middle;
+}
+
+.bt-cancel-table td:last-child {
+  background-color: #f8f8fa;
+}
+
+.bt-cancel-table td strong {
+  color: #d44;
+  font-weight: 700;
+}
+
+.bt-cancel-notes {
+  font-size: 13px;
+  color: #666;
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.bt-cancel-notes li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.bt-how-to-cancel {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.bt-how-to-cancel p {
+  color: #555;
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+/* ---- redBuddy ---- */
+.bt-redbuddy {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 20px 24px;
+  margin-top: 40px;
+}
+
+.bt-redbuddy-header {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.bt-redbuddy-icon {
+  font-size: 28px;
+  margin-right: 12px;
+}
+
+.bt-redbuddy-features {
+  display: flex;
+  justify-content: flex-start;
+  gap: 60px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #666;
+}
+
+.bt-chat-btn {
+  background-color: #3b4a6b;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Terms ---- */
+.bt-terms-box {
+  border: 1px solid #ddd;
+  border-radius: 2px;
+}
+
+.bt-terms-header {
+  background-color: #f5f0ee;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-bottom: 1px solid #ddd;
+}
+
+.bt-terms-body {
+  padding: 20px 24px;
+  font-size: 13px;
+  color: #333;
+  line-height: 1.65;
+}
+
+.bt-terms-list {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.bt-terms-list li {
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+
+.bt-terms-list p {
+  margin-bottom: 6px;
+}
+
+.bt-banner-container {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+/* ---- Print styles ---- */
+@media print {
+  .bus-ticket-wrapper {
+    max-width: 100%;
+    margin: 50px;
+  }
+
+  .bus-ticket-page {
+    page-break-inside: avoid;
+  }
+
+  .bt-page-separator {
+    page-break-after: always;
+    height: 0;
+    background: none;
+  }
+
+  .bt-header,
+  .bt-header-bottom {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bt-save-paper {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bt-details-header,
+  .bt-terms-header {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bt-chat-btn,
+  .bt-page-separator {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .bt-cancel-table td:last-child {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
