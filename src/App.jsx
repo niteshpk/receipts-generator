@@ -83,6 +83,27 @@ const App = () => {
             </div>
           </div>
         </div>
+
+        <div className="col-12 col-md-6 mb-3">
+          <div className="card">
+            <h5 className="card-header">CSV Upload Form</h5>
+            <div className="card-body">
+              <p className="card-text">CSV upload test</p>
+              <div className="d-flex justify-content-between align-items-center">
+                <a
+                  href="/Laptop-Submission-Form.pdf"
+                  className="btn btn-outline-dark me-2"
+                  target="_blank"
+                >
+                  CSV Upload Form
+                </a>
+                <Link to="/csv-upload" className="btn btn-primary">
+                  Generate CSV Upload Form
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

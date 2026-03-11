@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import RentReceiptContainer from "./components/rent-receipt/RentReceiptContainer";
 import WifiReceiptContainer from "./components/wifi-receipt/WifiReceiptContainer";
 import LaptopSubmissionContainer from "./components/laptop-submission-receipt/LaptopSubmissionContainer";
+import CsvUploadContainer from "./components/csv-upload/CsvUploadContainer";
 import App from "./App";
 import "./index.css";
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/laptop-submission-receipt",
     element: <LaptopSubmissionContainer />,
+  },
+  {
+    path: "/csv-upload",
+    element: <CsvUploadContainer />,
   },
 ]);
 
